@@ -234,12 +234,38 @@ html {
         display: block;
     }
     
+    .hamburger-icon {
+        display: flex;
+    }
+    
+    /* Hide traditional nav links on mobile */
+    .navigation > .nav-link {
+        display: none;
+    }
+    
     .nav-link {
         display: none;
     }
     
-    .hamburger-icon {
-        display: flex;
+    .hamburger-icon span {
+        width: 25px;
+        height: 3px;
+        background-color: #d2d2d2;
+        margin: 3px 0;
+        transition: 0.3s;
+        border-radius: 2px;
+    }
+    
+    .hamburger-icon.active span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    
+    .hamburger-icon.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger-icon.active span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
     }
     
     /* Mobile banner content */
@@ -750,6 +776,7 @@ html {
     letter-spacing: normal;
 }
 
+/* Desktop navigation styles - show traditional nav on desktop */
 .navigation {
     position: fixed;
     top: 20px;
@@ -765,14 +792,35 @@ html {
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Hamburger menu styles */
+.nav-link {
+    color: #d2d2d2;
+    text-decoration: none;
+    font-family: 'ICA Rubrik', sans-serif;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    padding: 8px 16px;
+    border-radius: 15px;
+}
+
+.nav-link:hover {
+    color: #abf113;
+    background-color: rgba(171, 241, 19, 0.1);
+    transform: translateY(-2px);
+}
+
+.nav-link:active {
+    transform: translateY(0);
+}
+
+/* Hamburger menu styles - hidden by default on desktop */
 .hamburger-menu {
     display: none;
     position: relative;
 }
 
 .hamburger-icon {
-    display: flex;
+    display: none;
     flex-direction: column;
     cursor: pointer;
     padding: 5px;
@@ -839,28 +887,6 @@ html {
     color: #abf113;
     background-color: rgba(171, 241, 19, 0.1);
     transform: translateX(-5px);
-}
-
-/* Desktop navigation styles */
-.nav-link {
-    color: #d2d2d2;
-    text-decoration: none;
-    font-family: 'ICA Rubrik', sans-serif;
-    font-size: 1.1em;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    padding: 8px 16px;
-    border-radius: 15px;
-}
-
-.nav-link:hover {
-    color: #abf113;
-    background-color: rgba(171, 241, 19, 0.1);
-    transform: translateY(-2px);
-}
-
-.nav-link:active {
-    transform: translateY(0);
 }
 
 .scroll-to-top {
