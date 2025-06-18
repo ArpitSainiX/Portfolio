@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>CSS ONLY</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: #D2D2D2;
+            background-image:
+            repeating-linear-gradient(
+                to right, transparent 0 100px,
+                #25283b22 100px 101px
+            ),
+            repeating-linear-gradient(
+                to bottom, transparent 0 100px,
+                #25283b22 100px 101px
+            );
+        }
+        
+        body::before{
+            position: absolute;
+            width: min(1400px, 90vw);
+            top: 10%;
+            left: 50%;
+            height: 90%;
+            transform: translateX(-50%);
+            content: '';
+            background-image: url(bg.png);
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: top center;
+            pointer-events: none;
+        }
+    </style>
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="banner" id="banner">
+        <nav class="navigation">
+            <a href="#banner" class="nav-link">Home</a>
+            <a href="#secondpage" class="nav-link">Portfolio</a>
+            <a href="#thirdpage" class="nav-link">Contact</a>
+        </nav>
+        <div class="slider" style="--quantity: 10">
+            <div class="item" style="--position: 1"><img src="sc01.png" alt=""></div>
+            <div class="item" style="--position: 2"><img src="sc02.png" alt=""></div>
+            <div class="item" style="--position: 3"><img src="sc03.png" alt=""></div>
+            <div class="item" style="--position: 4"><img src="sc04.png" alt=""></div>
+            <div class="item" style="--position: 5"><img src="sc05.png" alt=""></div>
+            <div class="item" style="--position: 6"><img src="sc06.png" alt=""></div>
+            <div class="item" style="--position: 7"><img src="sc07.png" alt=""></div>
+            <div class="item" style="--position: 8"><img src="sc08.png" alt=""></div>
+            <div class="item" style="--position: 9"><img src="sc09.png" alt=""></div>
+            <div class="item" style="--position: 10"><img src="sc10.png" alt=""></div>
+        </div>
+        <div class="content">
+            <h1 data-content="VIDEO EDITOR">
+                VIDEO EDITOR
+            </h1>
+            <div class="author">
+                <h2>ARPIT</h2>
+                <p><b>Video Editing</b></p>
+                <p>
+                    I'm a creative video editor and a web developer.
+                    I have the expertise to create stunning videos and websites and have the experience of one year in Adobe premier pro and two months in Adobe after effects.
+                </p>
+            </div>
+            <div class="model"></div>
+        </div>
+    </div>
+    <div id="secondpage">
+        <div id="left">
+            <div id="videos">
+                <a class="video01" href="https://www.youtube.com/watch?v=QoDOLjRiibM">
+                    <img src="Thumbnail_sixth_video.jpg" alt="Focus">
+                </a>
+
+                <p class="details02">
+                    This video is edited by me and also owned by me. This video is edited with Adobe premier pro and After effects.
+                </p>
+
+                <a class="video01" href="https://youtu.be/mfpR72nVqns">
+                    <img src="NewThumbnaiil.jpg" alt="Focus">
+                </a>
+
+                <p class="details04">
+                    This video is edited by me and also owned by me. This video is edited with Adobe premier pro and After effects.
+                </p>
+            </div>
+        </div>
+
+        <div id="right">
+            <div id="about">
+                <p class="details01">
+                    This video is edited by me and also owned by me. This video is edited with Adobe premier pro and After effects.
+                </p>
+
+                <a class="video02" href="https://www.youtube.com/watch?v=0MDfbwhOnJE">
+                    <img src="edited thumbnail.jpg" alt="Focus" height="200px" width="360px">
+                </a>
+
+                <p class="details03">
+                    This video is edited by me and also owned by me. This video is edited with Adobe premier pro and After effects.
+                </p>
+
+                <a class="video04" href="https://www.youtube.com/watch?v=0MDfbwhOnJE">
+                    <img src="YouTube thumbnail.jpg" alt="Focus" height="200px" width="360px">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="thirdpage">
+        <div id="contact">
+            <p class="firstline">Feel free to reach out to me for any inquiries or collaborations.</p>
+            <h1 class="mainline">Get in touch with Me</h1>
+
+            <div id="socials">
+                <div id="icons">
+                    <a href="https://www.instagram.com/arpitsainix/"><i class="ri-instagram-line"></i></a>
+                    <a href="https://www.youtube.com/channel/UC8BvjS8rjO1vJlfnNF_oK6Q"><i class="ri-youtube-line"></i></a>
+                    <a href="https://www.linkedin.com/in/arpitsainix/"><i class="ri-linkedin-line"></i></a>
+                    <a href="https://discord.com/channels/@me"><i class="ri-discord-line"></i></a>
+                    <a href="https://github.com/ArpitSainiX"><i class="ri-github-line"></i></a>
+                </div>
+            </div>
+
+            <p class="lastline">
+                Thank you for visiting my portfolio. I look forward to hearing from you.
+            </p>
+            
+            <div id="numbers">
+                <div id="phone">
+                    <p>Mobile number : +91 9027119425</p>
+                </div>
+
+                <div id="email">
+                    <p>Email : arpitsaini9831@gmail.com</p>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+    
+    <button id="scrollToTop" class="scroll-to-top" onclick="scrollToTop()">
+        <i class="ri-arrow-up-line"></i>
+    </button>
+    
+    <script>
+        // Scroll to top functionality
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+        
+        // Show/hide scroll to top button based on scroll position
+        window.addEventListener('scroll', function() {
+            const scrollToTopBtn = document.getElementById('scrollToTop');
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('show');
+            } else {
+                scrollToTopBtn.classList.remove('show');
+            }
+        });
+        
+        // Smooth scroll for navigation links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

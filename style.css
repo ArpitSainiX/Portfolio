@@ -1,0 +1,909 @@
+@import url('https://fonts.cdnfonts.com/css/ica-rubrik-black');
+@import url('https://fonts.cdnfonts.com/css/poppins');
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+.banner{
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+.banner .slider{
+    position: absolute;
+    width: 200px;
+    height: 250px;
+    top: 10%;
+    left: calc(50% - 100px);
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    animation: autoRun 20s linear infinite;
+    z-index: 2;
+}
+@keyframes autoRun{
+    from{
+        transform: perspective(1000px) rotateX(-16deg) rotateY(0deg);
+    }to{
+        transform: perspective(1000px) rotateX(-16deg) rotateY(360deg);
+    }
+}
+
+.banner .slider .item{
+    position: absolute;
+    inset: 0 0 0 0;
+    transform: 
+        rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+        translateZ(550px);
+}
+
+.banner .slider .item img{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.banner .slider .item img:hover{
+    box-shadow: 0 0 10px #abf113;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.banner .content{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(1400px, 100vw);
+    height: max-content;
+    padding-bottom: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+}
+.banner .content h1{
+    font-family: 'ICA Rubrik';
+    font-size: 12em;
+    line-height: 1em;
+    color: #25283B;
+    position: relative;
+}
+.banner .content h1::after{
+    position: absolute;
+    inset: 0 0 0 0;
+    content: attr(data-content);
+    z-index: 2;
+    -webkit-text-stroke: 2px #d2d2d2;
+    color: transparent;
+}
+.banner .content .author{
+    font-family: Poppins;
+    text-align: right;
+    max-width: 200px;
+}
+.banner .content h2{
+    font-size: 3em;
+}
+.banner .content .model{
+    background-image: url(newModel.png);
+    width: 100%;
+    height:110vh;
+    position: absolute;
+    justify-content: baseline;
+    bottom: 0%;
+    left: 0;
+    background-size: auto 130%;
+    background-repeat: no-repeat;
+    background-position: top center;
+    z-index: 1;
+}
+@media screen and (max-width: 1023px) {
+    .banner .slider{
+        width: 160px;
+        height: 200px;
+        left: calc(50% - 80px);
+    }
+    .banner .slider .item{
+        transform: 
+            rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+            translateZ(300px);
+    }
+    .banner .content h1{
+        text-align: center;
+        width: 100%;
+        text-shadow: 0 10px 20px #000;
+        font-size: 7em;
+    }
+    .banner .content .author{
+        color: #fff;
+        padding: 20px;
+        text-shadow: 0 10px 20px #000;
+        z-index: 2;
+        max-width: unset;
+        width: 100%;
+        text-align: center;
+        padding: 0 30px;
+    }
+    
+    /* Navigation responsive */
+    .navigation {
+        top: 15px;
+        padding: 12px 25px;
+        gap: 20px;
+    }
+    
+    .nav-link {
+        font-size: 1em;
+        padding: 6px 12px;
+    }
+    
+    /* Second page responsive */
+    #secondpage {
+        flex-direction: column;
+        height: auto;
+        min-height: 100vh;
+        padding: 30px 15px;
+    }
+    
+    #left, #right {
+        width: 100%;
+        height: auto;
+        padding: 15px;
+        gap: 20px;
+    }
+    
+    .video01 img, .video02 img, .video04 img {
+        max-width: 350px;
+        margin: 0 auto;
+    }
+    
+    .details01, .details02, .details03, .details04 {
+        margin: 0;
+        font-size: 1em;
+        padding: 15px;
+    }
+    
+    /* Third page responsive */
+    .firstline {
+        font-size: 1.8em;
+        margin: 40px 20px;
+        text-align: center;
+    }
+    
+    .mainline {
+        font-size: 1em;
+        margin: 30px 20px;
+        text-align: center;
+    }
+    
+    #socials #icons {
+        gap: 15px;
+        font-size: 1.5em;
+        flex-wrap: wrap;
+    }
+    
+    #numbers {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+    
+    #phone, #email {
+        margin: 20px;
+        text-align: center;
+        font-size: 1em;
+    }
+}
+@media screen and (max-width: 767px) {
+    .banner .slider{
+        width: 100px;
+        height: 150px;
+        left: calc(50% - 50px);
+    }
+    .banner .slider .item{
+        transform: 
+            rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+            translateZ(180px);
+    }
+    .banner .content h1{
+        font-size: 5em;
+    }
+    
+    /* Mobile navigation */
+    .navigation {
+        top: 10px;
+        padding: 10px 20px;
+        gap: 15px;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .nav-link {
+        font-size: 0.9em;
+        padding: 5px 10px;
+    }
+    
+    /* Mobile banner content */
+    .banner .content {
+        padding-bottom: 50px;
+    }
+    
+    .banner .content h1 {
+        font-size: 3.5em;
+        margin-bottom: 20px;
+    }
+    
+    .banner .content .author {
+        padding: 0 15px;
+    }
+    
+    .banner .content .author h2 {
+        font-size: 2em;
+    }
+    
+    .banner .content .author p {
+        font-size: 0.9em;
+        line-height: 1.4;
+    }
+    
+    /* Mobile second page */
+    #secondpage {
+        padding: 20px 10px;
+    }
+    
+    #left, #right {
+        padding: 10px;
+        gap: 15px;
+    }
+    
+    .video01 img, .video02 img, .video04 img {
+        max-width: 280px;
+        margin: 0 auto;
+    }
+    
+    .details01, .details02, .details03, .details04 {
+        margin: 0;
+        font-size: 0.9em;
+        padding: 12px;
+        text-align: center;
+    }
+    
+    /* Mobile third page */
+    .firstline {
+        font-size: 1.4em;
+        margin: 30px 15px;
+        text-align: center;
+    }
+    
+    .mainline {
+        font-size: 0.9em;
+        margin: 20px 15px;
+        text-align: center;
+    }
+    
+    #socials #icons {
+        gap: 10px;
+        font-size: 1.2em;
+    }
+    
+    #socials #icons i {
+        padding: 8px;
+    }
+    
+    .lastline {
+        font-size: 1em;
+        margin: 30px 15px;
+        text-align: center;
+    }
+    
+    #phone, #email {
+        margin: 15px;
+        font-size: 0.9em;
+        text-align: center;
+    }
+    
+    /* Mobile scroll to top */
+    .scroll-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 1.2em;
+    }
+}
+
+/* Extra small devices (phones, 480px and down) */
+@media screen and (max-width: 480px) {
+    .banner .slider {
+        width: 80px;
+        height: 120px;
+        left: calc(50% - 40px);
+    }
+    
+    .banner .slider .item {
+        transform: 
+            rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+            translateZ(150px);
+    }
+    
+    .banner .content h1 {
+        font-size: 2.5em;
+    }
+    
+    .banner .content .author h2 {
+        font-size: 1.5em;
+    }
+    
+    .banner .content .author p {
+        font-size: 0.8em;
+    }
+    
+    /* Navigation for very small screens */
+    .navigation {
+        top: 5px;
+        padding: 8px 15px;
+        gap: 10px;
+    }
+    
+    .nav-link {
+        font-size: 0.8em;
+        padding: 4px 8px;
+    }
+    
+    /* Content adjustments */
+    .firstline {
+        font-size: 1.2em;
+        margin: 20px 10px;
+    }
+    
+    .mainline {
+        font-size: 0.8em;
+        margin: 15px 10px;
+    }
+    
+    #socials #icons {
+        gap: 8px;
+        font-size: 1em;
+    }
+    
+    #socials #icons i {
+        padding: 6px;
+    }
+    
+    .lastline {
+        font-size: 0.9em;
+        margin: 20px 10px;
+    }
+    
+    #phone, #email {
+        margin: 10px;
+        font-size: 0.8em;
+    }
+    
+    /* Scroll to top for very small screens */
+    .scroll-to-top {
+        bottom: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+        font-size: 1em;
+    }
+    
+    /* Second page for very small screens */
+    #secondpage {
+        padding: 15px 8px;
+    }
+    
+    #left, #right {
+        padding: 8px;
+        gap: 12px;
+    }
+    
+    .video01 img, .video02 img, .video04 img {
+        max-width: 250px;
+    }
+    
+    .details01, .details02, .details03, .details04 {
+        font-size: 0.8em;
+        padding: 10px;
+        line-height: 1.3;
+    }
+}
+
+/* Landscape orientation adjustments for mobile */
+@media screen and (max-width: 767px) and (orientation: landscape) {
+    .banner .content h1 {
+        font-size: 4em;
+    }
+    
+    .banner .content .author {
+        padding: 0 20px;
+    }
+    
+    .navigation {
+        flex-direction: row;
+        top: 5px;
+        padding: 8px 20px;
+    }
+    
+    #secondpage {
+        flex-direction: row;
+        padding: 15px 10px;
+    }
+    
+    #left, #right {
+        width: 50%;
+        padding: 10px;
+        gap: 15px;
+    }
+    
+    .video01 img, .video02 img, .video04 img {
+        max-width: 200px;
+        margin: 0 auto;
+    }
+    
+    .details01, .details02, .details03, .details04 {
+        margin: 0;
+        font-size: 0.8em;
+        padding: 10px;
+    }
+}
+
+/* Large screens (desktops, 1200px and up) */
+@media screen and (min-width: 1200px) {
+    .banner .content h1 {
+        font-size: 14em;
+    }
+    
+    .banner .content .author h2 {
+        font-size: 3.5em;
+    }
+    
+    .banner .content .author p {
+        font-size: 1.1em;
+    }
+    
+    .firstline {
+        font-size: 2.5em;
+    }
+    
+    .mainline {
+        font-size: 1.4em;
+    }
+    
+    #socials #icons {
+        font-size: 2.2em;
+        gap: 25px;
+    }
+    
+    .lastline {
+        font-size: 1.4em;
+    }
+    
+    #phone, #email {
+        font-size: 1.3em;
+    }
+}
+
+/* Ultra-wide screens (1400px and up) */
+@media screen and (min-width: 1400px) {
+    .banner .content h1 {
+        font-size: 16em;
+    }
+    
+    .banner .content .author h2 {
+        font-size: 4em;
+    }
+    
+    .firstline {
+        font-size: 2.8em;
+    }
+    
+    .mainline {
+        font-size: 1.6em;
+    }
+    
+    #socials #icons {
+        font-size: 2.5em;
+        gap: 30px;
+    }
+}
+
+#secondpage{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    background-color: #3c3c3c;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+#secondpage::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+}
+
+#left{
+    width: 50%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+#right{
+    width: 50%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+#videos{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.video01, .video02, .video04 {
+    display: block;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.video01:hover, .video02:hover, .video04:hover {
+    transform: scale(1.02);
+}
+
+.video01 img, .video02 img, .video04 img{
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 15px;
+    border: 2px solid #25283B;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    display: block;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+}
+
+.video01 img:hover, .video02 img:hover, .video04 img:hover {
+    box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+    transform: translateY(-2px);
+}
+
+.details01, .details02, .details03, .details04{
+    font-family: 'ICA Rubrik', sans-serif;
+    font-size: 1.1em;
+    line-height: 1.4;
+    color: #25283B;
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px solid #25283B;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    text-align: center;
+    margin: 0;
+    word-wrap: break-word;
+    hyphens: auto;
+    font-weight: 500;
+}
+
+.details01{
+    background-color: #b3b3b3;
+}
+
+.details02{
+    background-color: aliceblue;
+}
+
+.details03{
+    background-color: #e28534;
+}
+
+.details04{
+    background-color: #16e1c9;
+}
+
+#thirdpage{
+    width: 100%;
+    height: 100vh;
+    background-color: #ffffff;
+}
+
+#contact{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.firstline{
+    font-size: 2.2em;
+    line-height: 1em;
+    color: #25283B;
+    position: relative;
+    margin: 70px;
+    margin-top: 30px;
+    padding: 20px;
+    font-family: 'ICA Rubrik';
+    letter-spacing: normal;
+}
+
+.mainline{
+    font-size: 1.2em;
+    line-height: 1em;
+    color: #25283B;
+    position: relative;
+    margin: 70px;
+    margin-top: 10px;
+    padding: 20px;
+    font-family: 'ICA Rubrik';
+    letter-spacing: normal;
+    background-color: #baff53;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+.mainline:hover{
+    cursor: pointer;
+    background-color: #97ff24;
+    transition: 0.5s;
+    transform: scale(1.1);
+}
+
+.mainline:active{
+    background-color: #70b324;
+}
+
+#socials #icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-size: 2em;
+}
+
+#socials #icons i{
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 20px;
+    background-color: #bcbcbc;
+}
+
+#icons a{
+    text-decoration: none;
+    color:black;
+}
+
+#icons a:hover{
+    background-color: #97ff24;
+    transition: 0.5s;
+    transform: scale(1.1);
+}
+
+.lastline{
+    font-size: 1.2em;
+    line-height: 1em;
+    color: #25283B;
+    position: relative;
+    margin: 70px;
+    margin-top: 50px;
+    padding: 20px;
+    font-family: 'ICA Rubrik';
+    letter-spacing: normal;
+}
+
+#phone {
+    font-size: 1.2em;
+    line-height: 1em;
+    color: #25283B;
+    position: relative;
+    margin: 70px;
+    margin-top: 50px;
+    padding: 20px;
+    font-family: 'ICA Rubrik';
+    letter-spacing: normal;
+}
+
+#numbers{
+    display: flex;
+    gap:40px;
+}
+
+#email{
+    font-size: 1.2em;
+    line-height: 1em;
+    color: #25283B;
+    position: relative;
+    margin: 70px;
+    margin-top: 50px;
+    padding: 20px;
+    font-family: 'ICA Rubrik';
+    letter-spacing: normal;
+}
+
+.navigation {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 30px;
+    z-index: 1000;
+    background-color: rgba(37, 40, 59, 0.9);
+    padding: 15px 30px;
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-link {
+    color: #d2d2d2;
+    text-decoration: none;
+    font-family: 'ICA Rubrik', sans-serif;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    padding: 8px 16px;
+    border-radius: 15px;
+}
+
+.nav-link:hover {
+    color: #abf113;
+    background-color: rgba(171, 241, 19, 0.1);
+    transform: translateY(-2px);
+}
+
+.nav-link:active {
+    transform: translateY(0);
+}
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(37, 40, 59, 0.9);
+    color: #d2d2d2;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.scroll-to-top:hover {
+    background-color: rgba(171, 241, 19, 0.9);
+    color: #25283B;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(171, 241, 19, 0.3);
+}
+
+.scroll-to-top:active {
+    transform: translateY(-1px);
+}
+
+.scroll-to-top.show {
+    display: flex;
+}
+
+/* Ensure images are responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Improve touch targets on mobile */
+@media screen and (max-width: 767px) {
+    .nav-link, #socials #icons a, .scroll-to-top {
+        min-height: 44px;
+        min-width: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* Fix for very tall screens */
+@media screen and (min-height: 1000px) {
+    .banner {
+        min-height: 100vh;
+    }
+    
+    .banner .content {
+        padding-bottom: 150px;
+    }
+}
+
+/* Fix for very short screens */
+@media screen and (max-height: 600px) {
+    .banner .content h1 {
+        font-size: 3em;
+    }
+    
+    .banner .content .author h2 {
+        font-size: 1.5em;
+    }
+    
+    .banner .content .author p {
+        font-size: 0.8em;
+    }
+    
+    .firstline {
+        font-size: 1.2em;
+        margin: 20px;
+    }
+    
+    .mainline {
+        font-size: 0.9em;
+        margin: 15px;
+    }
+}
+
+/* Ensure proper spacing on all devices */
+* {
+    box-sizing: border-box;
+}
+
+/* Improve accessibility */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+    
+    .banner .slider {
+        animation: none;
+    }
+    
+    .nav-link:hover,
+    .scroll-to-top:hover,
+    .mainline:hover,
+    #icons a:hover {
+        transform: none;
+    }
+}
+
+/* Additional improvements for better visual hierarchy */
+#about {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Add subtle animations for better UX */
+.video01 img, .video02 img, .video04 img {
+    transition: all 0.3s ease;
+}
+
+.video01 img:hover, .video02 img:hover, .video04 img:hover {
+    box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+    transform: translateY(-2px);
+}
+
+/* Ensure proper contrast for text */
+.details01, .details02, .details03, .details04 {
+    color: #25283B;
+    font-weight: 500;
+}
+
+/* Add responsive text sizing */
+@media screen and (max-width: 480px) {
+    .details01, .details02, .details03, .details04 {
+        line-height: 1.3;
+    }
+}
