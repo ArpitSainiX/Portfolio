@@ -47,9 +47,18 @@
 <body>
     <div class="banner" id="banner">
         <nav class="navigation">
-            <a href="#banner" class="nav-link">Home</a>
-            <a href="#secondpage" class="nav-link">Portfolio</a>
-            <a href="#thirdpage" class="nav-link">Contact</a>
+            <div class="hamburger-menu">
+                <div class="hamburger-icon" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="nav-menu" id="navMenu">
+                    <a href="#banner" class="nav-link" onclick="closeMenu()">Home</a>
+                    <a href="#secondpage" class="nav-link" onclick="closeMenu()">Portfolio</a>
+                    <a href="#thirdpage" class="nav-link" onclick="closeMenu()">Contact</a>
+                </div>
+            </div>
         </nav>
         <div class="slider" style="--quantity: 10">
             <div class="item" style="--position: 1"><img src="sc01.png" alt=""></div>
@@ -173,6 +182,33 @@
                 scrollToTopBtn.classList.add('show');
             } else {
                 scrollToTopBtn.classList.remove('show');
+            }
+        });
+        
+        // Hamburger menu functionality
+        function toggleMenu() {
+            const hamburgerIcon = document.querySelector('.hamburger-icon');
+            const navMenu = document.getElementById('navMenu');
+            
+            hamburgerIcon.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        }
+        
+        function closeMenu() {
+            const hamburgerIcon = document.querySelector('.hamburger-icon');
+            const navMenu = document.getElementById('navMenu');
+            
+            hamburgerIcon.classList.remove('active');
+            navMenu.classList.remove('active');
+        }
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const hamburgerMenu = document.querySelector('.hamburger-menu');
+            const navMenu = document.getElementById('navMenu');
+            
+            if (!hamburgerMenu.contains(event.target) && navMenu.classList.contains('active')) {
+                closeMenu();
             }
         });
         
