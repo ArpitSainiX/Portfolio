@@ -322,35 +322,38 @@ body {
     
     /* Mobile third page */
     .firstline {
-        font-size: 1.4em;
-        margin: 30px 15px;
-        text-align: center;
-    }
-    
-    .mainline {
-        font-size: 0.9em;
-        margin: 20px 15px;
-        text-align: center;
-    }
-    
-    #socials #icons {
-        gap: 10px;
         font-size: 1.2em;
+        margin: 15px 5px 5px 5px;
+        padding: 8px 5px;
+        text-align: center;
     }
-    
-    #socials #icons i {
-        padding: 8px;
+    .mainline {
+        font-size: 1em;
+        margin: 10px 5px 5px 5px;
+        padding: 10px 5px;
+        text-align: center;
     }
-    
     .lastline {
         font-size: 1em;
-        margin: 30px 15px;
+        margin: 10px 5px 5px 5px;
+        padding: 10px 5px;
         text-align: center;
     }
-    
+    #contact {
+        gap: 10px;
+        padding: 5px;
+        min-height: unset;
+    }
+    #numbers {
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+        margin: 0;
+    }
     #phone, #email {
-        margin: 15px;
-        font-size: 0.9em;
+        margin: 5px 0;
+        font-size: 0.95em;
+        padding: 8px 5px;
         text-align: center;
     }
     
@@ -404,32 +407,32 @@ body {
     
     /* Content adjustments */
     .firstline {
-        font-size: 1.2em;
-        margin: 20px 10px;
-    }
-    
-    .mainline {
-        font-size: 0.8em;
-        margin: 15px 10px;
-    }
-    
-    #socials #icons {
-        gap: 8px;
         font-size: 1em;
+        margin: 10px 2px 2px 2px;
+        padding: 5px 2px;
     }
-    
-    #socials #icons i {
-        padding: 6px;
+    .mainline {
+        font-size: 0.9em;
+        margin: 5px 2px 2px 2px;
+        padding: 7px 2px;
     }
-    
     .lastline {
         font-size: 0.9em;
-        margin: 20px 10px;
+        margin: 5px 2px 2px 2px;
+        padding: 7px 2px;
     }
-    
+    #contact {
+        gap: 6px;
+        padding: 2px;
+    }
+    #numbers {
+        gap: 5px;
+        margin: 0;
+    }
     #phone, #email {
-        margin: 10px;
-        font-size: 0.8em;
+        margin: 2px 0;
+        font-size: 0.85em;
+        padding: 5px 2px;
     }
     
     /* Scroll to top for very small screens */
