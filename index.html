@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
     <style>
         *{
             margin: 0;
@@ -44,7 +45,7 @@
     />
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-scroll-container>
     <div class="banner" id="banner">
         <nav class="navigation">
             <div class="hamburger-menu">
@@ -166,19 +167,25 @@
         <i class="ri-arrow-up-line"></i>
     </button>
     
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
     <script>
+        // Initialize Locomotive Scroll
+        const scroll = new LocomotiveScroll({
+            el: document.querySelector('[data-scroll-container]'),
+            smooth: true,
+            multiplier: 1,
+            lerp: 0.05
+        });
+
         // Scroll to top functionality
         function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+            scroll.scrollTo(0);
         }
         
         // Show/hide scroll to top button based on scroll position
-        window.addEventListener('scroll', function() {
+        scroll.on('scroll', (args) => {
             const scrollToTopBtn = document.getElementById('scrollToTop');
-            if (window.pageYOffset > 300) {
+            if (args.scroll.y > 300) {
                 scrollToTopBtn.classList.add('show');
             } else {
                 scrollToTopBtn.classList.remove('show');
@@ -219,11 +226,14 @@
                 const targetId = this.getAttribute('href');
                 const targetSection = document.querySelector(targetId);
                 if (targetSection) {
-                    targetSection.scrollIntoView({
-                        behavior: 'smooth'
-                    });
+                    scroll.scrollTo(targetSection);
                 }
             });
+        });
+
+        // Update scroll on page load and after any dynamic content changes
+        window.addEventListener('load', () => {
+            scroll.update();
         });
     </script>
 </body>

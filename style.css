@@ -4,6 +4,13 @@
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 80px;
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .banner{
@@ -784,7 +791,7 @@ html {
     transform: translateX(-50%);
     display: flex;
     gap: 30px;
-    z-index: 1000;
+    z-index: 9999;
     background-color: rgba(37, 40, 59, 0.9);
     padding: 15px 30px;
     border-radius: 25px;
@@ -904,7 +911,7 @@ html {
     align-items: center;
     justify-content: center;
     font-size: 1.5em;
-    z-index: 1000;
+    z-index: 9999;
     transition: all 0.3s ease;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -1056,4 +1063,51 @@ img {
     .hamburger-icon {
         display: flex;
     }
+}
+
+/* Locomotive Scroll styles */
+html.has-scroll-smooth {
+    overflow: hidden;
+}
+
+.has-scroll-smooth body {
+    overflow: hidden;
+}
+
+.has-scroll-smooth [data-scroll-container] {
+    min-height: 100vh;
+}
+
+[data-scroll-direction="horizontal"] [data-scroll-container] {
+    height: 100vh;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+[data-scroll-direction="horizontal"] [data-scroll-section] {
+    display: inline-block;
+    vertical-align: top;
+    white-space: nowrap;
+    height: 100%;
+}
+
+/* Update scroll behavior for Locomotive */
+html {
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure proper z-index for fixed elements */
+.navigation {
+    position: fixed;
+    z-index: 9999;
+}
+
+.scroll-to-top {
+    z-index: 9999;
 }
