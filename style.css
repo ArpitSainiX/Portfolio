@@ -365,6 +365,60 @@ body {
         height: 45px;
         font-size: 1.2em;
     }
+
+    /* Remove min-height and center alignment for sections */
+    #secondpage, #thirdpage, #contact {
+        min-height: unset !important;
+        height: auto !important;
+        justify-content: flex-start !important;
+        align-items: stretch !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    /* Make columns and cards fill width */
+    #left, #right, #about, #videos {
+        width: 100% !important;
+        padding: 0 4px !important;
+        box-sizing: border-box;
+    }
+    .details01, .details02, .details03, .details04 {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 8px 0 !important;
+        padding-left: 4px !important;
+        padding-right: 4px !important;
+        box-sizing: border-box;
+    }
+    .video01 img, .video02 img, .video04 img {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        margin: 0 auto 8px auto !important;
+        display: block;
+    }
+    /* Reduce vertical gaps */
+    #left, #right, #about, #videos {
+        gap: 10px !important;
+    }
+    #contact {
+        gap: 8px !important;
+        padding: 8px 4px !important;
+    }
+    #numbers {
+        flex-direction: column !important;
+        gap: 6px !important;
+        align-items: stretch !important;
+        margin: 0 !important;
+        width: 100% !important;
+    }
+    #phone, #email {
+        margin: 2px 0 !important;
+        font-size: 0.95em;
+        padding: 6px 4px !important;
+        text-align: center;
+        width: 100% !important;
+        box-sizing: border-box;
+    }
 }
 
 /* Extra small devices (phones, 480px and down) */
@@ -462,6 +516,56 @@ body {
         font-size: 0.8em;
         padding: 10px;
         line-height: 1.3;
+    }
+
+    /* Remove min-height and center alignment for sections */
+    #secondpage, #thirdpage, #contact {
+        min-height: unset !important;
+        height: auto !important;
+        justify-content: flex-start !important;
+        align-items: stretch !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    #left, #right, #about, #videos {
+        width: 100% !important;
+        padding: 0 2px !important;
+        box-sizing: border-box;
+    }
+    .details01, .details02, .details03, .details04 {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 6px 0 !important;
+        padding-left: 2px !important;
+        padding-right: 2px !important;
+        box-sizing: border-box;
+    }
+    .video01 img, .video02 img, .video04 img {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        margin: 0 auto 6px auto !important;
+        display: block;
+    }
+    #left, #right, #about, #videos {
+        gap: 6px !important;
+    }
+    #contact {
+        gap: 5px !important;
+        padding: 5px 2px !important;
+    }
+    #numbers {
+        gap: 4px !important;
+        margin: 0 !important;
+        width: 100% !important;
+    }
+    #phone, #email {
+        margin: 1px 0 !important;
+        font-size: 0.85em;
+        padding: 4px 2px !important;
+        text-align: center;
+        width: 100% !important;
+        box-sizing: border-box;
     }
 }
 
