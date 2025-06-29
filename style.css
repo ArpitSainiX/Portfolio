@@ -45,6 +45,33 @@ body {
     transform: 
         rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
         translateZ(550px);
+    opacity: 0;
+    animation: popIn 0.6s ease-out forwards;
+    animation-delay: calc(var(--position) * 0.1s);
+}
+
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: 
+            rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+            translateZ(550px)
+            scale(0.3);
+    }
+    50% {
+        opacity: 1;
+        transform: 
+            rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+            translateZ(550px)
+            scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: 
+            rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+            translateZ(550px)
+            scale(1);
+    }
 }
 
 .banner .slider .item img{
@@ -120,6 +147,32 @@ body {
         transform: 
             rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
             translateZ(300px);
+        animation: popInTablet 0.6s ease-out forwards;
+        animation-delay: calc(var(--position) * 0.1s);
+    }
+    
+    @keyframes popInTablet {
+        0% {
+            opacity: 0;
+            transform: 
+                rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+                translateZ(300px)
+                scale(0.3);
+        }
+        50% {
+            opacity: 1;
+            transform: 
+                rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+                translateZ(300px)
+                scale(1.1);
+        }
+        100% {
+            opacity: 1;
+            transform: 
+                rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+                translateZ(300px)
+                scale(1);
+        }
     }
     .banner .content h1{
         text-align: center;
@@ -219,6 +272,32 @@ body {
         transform: 
             rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
             translateZ(180px);
+        animation: popInMobile 0.6s ease-out forwards;
+        animation-delay: calc(var(--position) * 0.1s);
+    }
+    
+    @keyframes popInMobile {
+        0% {
+            opacity: 0;
+            transform: 
+                rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+                translateZ(180px)
+                scale(0.3);
+        }
+        50% {
+            opacity: 1;
+            transform: 
+                rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+                translateZ(180px)
+                scale(1.1);
+        }
+        100% {
+            opacity: 1;
+            transform: 
+                rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+                translateZ(180px)
+                scale(1);
+        }
     }
     .banner .content h1{
         font-size: 5em;
@@ -439,6 +518,32 @@ body {
         transform: 
             rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
             translateZ(150px);
+        animation: popInSmall 0.6s ease-out forwards;
+        animation-delay: calc(var(--position) * 0.1s);
+    }
+    
+    @keyframes popInSmall {
+        0% {
+            opacity: 0;
+            transform: 
+                rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+                translateZ(150px)
+                scale(0.3);
+        }
+        50% {
+            opacity: 1;
+            transform: 
+                rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+                translateZ(150px)
+                scale(1.1);
+        }
+        100% {
+            opacity: 1;
+            transform: 
+                rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+                translateZ(150px)
+                scale(1);
+        }
     }
     
     .banner .content h1 {
@@ -1122,7 +1227,29 @@ img {
     }
     
     .banner .slider {
-        animation: none;
+        animation: autoRun 20s linear infinite;
+    }
+    
+    .banner .slider .item {
+        animation: popInReduced 0.8s ease-out forwards;
+        animation-delay: calc(var(--position) * 0.05s);
+    }
+    
+    @keyframes popInReduced {
+        0% {
+            opacity: 0;
+            transform: 
+                rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+                translateZ(550px)
+                scale(0.8);
+        }
+        100% {
+            opacity: 1;
+            transform: 
+                rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+                translateZ(550px)
+                scale(1);
+        }
     }
     
     .nav-link:hover,
