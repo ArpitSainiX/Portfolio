@@ -136,7 +136,43 @@ body {
     background-repeat: no-repeat;
     background-position: top center;
     z-index: 1;
+    /* Pop-up animation */
+    opacity: 0;
+    transform: scale(0.8);
+    animation: modelPopUp 1s cubic-bezier(0.23, 1, 0.32, 1) 0.2s forwards;
 }
+@keyframes modelPopUp {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.banner .content .model img{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.banner .content .model img:hover{
+    box-shadow: 0 0 10px #abf113;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.banner .content .author h2 {
+    font-size: 2em;
+}
+
+.banner .content .author p {
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
 @media screen and (max-width: 1023px) {
     .banner .slider{
         width: 160px;
